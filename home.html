@@ -1,11 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FacultyNotes IGDTUW</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Typewriter animation */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: black; }
+    }
+    .typewriter h1 {
+      overflow: hidden;
+      border-right: 3px solid black;
+      white-space: nowrap;
+      margin: 0 auto;
+      animation: typing 3s steps(30, end), blink 0.5s step-end infinite;
+    }
+
+    /* Hover animation */
+    .hover-move:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
-<body>
-    
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-600 text-white px-6 py-3 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <span class="text-xl font-semibold">FacultyNotes IGDTUW</span>
+      <ul class="flex space-x-6">
+        <li><a href="#about" class="hover:text-gray-200">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="typewriter text-center mt-10">
+    <h1 class="text-4xl font-bold">FacultyNotes IGDTUW</h1>
+  </header>
+
+  <!-- Departments Section -->
+  <main class="container mx-auto mt-16 px-6">
+    <h2 class="text-2xl font-semibold text-center mb-10">Departments</h2>
+
+    <!-- Department Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="departments-container">
+      <!-- Departments will be dynamically added here -->
+      <a href="department.html?department=cse-ai" class="block bg-blue-100 p-6 text-center rounded shadow hover-move transition-transform duration-300">
+        <h3 class="text-xl font-medium">CSE-AI</h3>
+      </a>
+      <a href="department.html?department=cse" class="block bg-green-100 p-6 text-center rounded shadow hover-move transition-transform duration-300">
+        <h3 class="text-xl font-medium">CSE</h3>
+      </a>
+      <a href="department.html?department=it" class="block bg-yellow-100 p-6 text-center rounded shadow hover-move transition-transform duration-300">
+        <h3 class="text-xl font-medium">IT</h3>
+      </a>
+      <a href="department.html?department=mae" class="block bg-pink-100 p-6 text-center rounded shadow hover-move transition-transform duration-300">
+        <h3 class="text-xl font-medium">MAE</h3>
+      </a>
+      <a href="department.html?department=ece" class="block bg-purple-100 p-6 text-center rounded shadow hover-move transition-transform duration-300">
+        <h3 class="text-xl font-medium">ECE</h3>
+      </a>
+      <a href="department.html?department=ece-ai" class="block bg-red-100 p-6 text-center rounded shadow hover-move transition-transform duration-300">
+        <h3 class="text-xl font-medium">ECE-AI</h3>
+      </a>
+      <a href="department.html?department=ai-ml" class="block bg-cyan-100 p-6 text-center rounded shadow hover-move transition-transform duration-300">
+        <h3 class="text-xl font-medium">AI-ML</h3>
+      </a>
+      <a href="department.html?department=dmam" class="block bg-indigo-100 p-6 text-center rounded shadow hover-move transition-transform duration-300">
+        <h3 class="text-xl font-medium">DMAM</h3>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white mt-16 py-4 text-center">
+    <p>&copy; 2024 FacultyNotes IGDTUW. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>

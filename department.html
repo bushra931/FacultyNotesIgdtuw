@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FacultyNotes IGDTUW</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Hover animation */
+    .hover-move:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Limiting the width of the cards */
+    .year-card {
+      max-width: 250px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .year-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .semester-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .semester-list a {
+      background-color: #ffffff;
+      padding: 10px;
+      text-align: center;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #00796b;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .semester-list a:hover {
+      background-color: #b2ebf2;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-600 text-white px-6 py-3 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <span class="text-xl font-semibold">FacultyNotes IGDTUW</span>
+      <ul class="flex space-x-6">
+        <li><a href="home.html" class="hover:text-gray-200">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="text-center mt-10">
+    <h1 class="text-4xl font-bold">Choose Your Year</h1>
+    <p class="text-lg text-gray-600 mt-2">Select your year and semester</p>
+  </header>
+
+  <!-- Year Section -->
+  <main class="container mx-auto mt-16 px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="year-cards-container">
+      <!-- Year 1 Card -->
+      <div class="year-card bg-blue-100 hover-move">
+        <h3 class="text-xl font-medium mb-4">Year 1</h3>
+        <div class="semester-list">
+          <a href="year1-sem1.html">Semester 1</a>
+          <a href="year1-sem2.html">Semester 2</a>
+        </div>
+      </div>
+
+      <!-- Year 2 Card -->
+      <div class="year-card bg-green-100 hover-move">
+        <h3 class="text-xl font-medium mb-4">Year 2</h3>
+        <div class="semester-list">
+          <a href="year2-sem3.html">Semester 3</a>
+          <a href="year2-sem4.html">Semester 4</a>
+        </div>
+      </div>
+
+      <!-- Year 3 Card -->
+      <div class="year-card bg-yellow-100 hover-move">
+        <h3 class="text-xl font-medium mb-4">Year 3</h3>
+        <div class="semester-list">
+          <a href="year3-sem5.html">Semester 5</a>
+          <a href="year3-sem6.html">Semester 6</a>
+        </div>
+      </div>
+
+      <!-- Year 4 Card -->
+      <div class="year-card bg-purple-100 hover-move">
+        <h3 class="text-xl font-medium mb-4">Year 4</h3>
+        <div class="semester-list">
+          <a href="year4-sem7.html">Semester 7</a>
+          <a href="year4-sem8.html">Semester 8</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white mt-16 py-4 text-center">
+    <p>&copy; 2024 FacultyNotes IGDTUW. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
