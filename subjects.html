@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subject Details - FacultyNotes IGDTUW</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom hover effect for cards */
+    .hover-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .hover-button:hover {
+      background-color: #2563eb; /* Darker shade of blue */
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
+
+    /* Ensure button is right-aligned within the container */
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .button-container .view-notes-btn {
+      margin-left: auto;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-600 text-white px-6 py-3 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <span class="text-xl font-semibold">FacultyNotes IGDTUW</span>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="hover:text-gray-200">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="text-center mt-10">
+    <h1 class="text-4xl font-bold text-gray-800" id="subject-name">Subject Details</h1>
+    <p class="text-lg text-gray-600 mt-2">Subject details for the selected department and semester</p>
+  </header>
+
+  <!-- Subject List Section -->
+  <main class="container mx-auto mt-16 px-6" id="subject-list-container">
+    <!-- Faculty Details will be dynamically inserted here -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white mt-16 py-4 text-center">
+    <p>&copy; 2024 FacultyNotes IGDTUW. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const department = urlParams.get('department');
+    const semester = urlParams.get('semester');
+    const subject = urlParams.get('subject');
+
+    // Display the subjects
+    document.getElementById('subject-name').innerText = `${department.toUpperCase()} - ${semester.replace('sem', '')} - ${subject}`;
+
+    // Define faculty and their respective Drive links (can be updated later)
+    const facultyDetails = {
+      "Math 101": [
+        {
+          name: "Dr. John Doe",
+          driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+        },
+        {
+          name: "Prof. Alice Green",
+          driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+        }
+      ],
+      "Computer Science 101": [
+        {
+          name: "Prof. Jane Smith",
+          driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+        },
+        {
+          name: "Dr. John Harris",
+          driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+        }
+      ],
+      "Physics 101": [
+        {
+          name: "Dr. Michael Johnson",
+          driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+        }
+      ],
+      "Engineering Drawing": [
+        {
+          name: "Prof. Robert Brown",
+          driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+        }
+      ],
+      // Add other subjects and their respective faculty details here...
+    };
+
+    // Function to dynamically generate the faculty details for each subject
+    function generateFacultyDetails(subject) {
+      const facultyContainer = document.getElementById('subject-list-container');
+      if (facultyDetails[subject]) {
+        facultyDetails[subject].forEach(faculty => {
+          const { name, driveLink } = faculty;
+          facultyContainer.innerHTML += `
+            <div class="bg-white p-6 rounded-lg shadow-lg mt-6 hover-card transform transition-all duration-300 ease-in-out">
+              <div class="button-container">
+                <h3 class="text-xl font-semibold text-gray-800">${name}</h3>
+                <a href="${driveLink}" target="_blank" class="view-notes-btn mt-4 inline-block px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover-button transition-all duration-200">
+                  View Notes
+                </a>
+              </div>
+            </div>
+          `;
+        });
+      } else {
+        facultyContainer.innerHTML = `<p class="text-red-500 text-center">No faculty details available for this subject.</p>`;
+      }
+    }
+
+    // Call the function to generate the faculty details
+    generateFacultyDetails(subject);
+  </script>
+
+</body>
+
+</html>

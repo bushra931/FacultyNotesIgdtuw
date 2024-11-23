@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FacultyNotes IGDTUW</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hover-move:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    .semester-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .semester-list a {
+      background-color: #ffffff;
+      padding: 15px;
+      text-align: center;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #000000; /* Changed text color to black */
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .semester-list a:hover {
+      background-color: #004d40;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+    .year-card {
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s ease;
+    }
+    .year-card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .btn-semester {
+      background-color: #0288d1;
+      padding: 12px 20px;
+      border-radius: 8px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .btn-semester:hover {
+      background-color: #01579b;
+      transform: translateY(-3px);
+    }
+
+    /* Different colors for each semester */
+    .sem1 { background-color: #ffeb3b; }   /* Yellow */
+    .sem2 { background-color: #4caf50; }   /* Green */
+    .sem3 { background-color: #2196f3; }   /* Blue */
+    .sem4 { background-color: #e91e63; }   /* Pink */
+    .sem5 { background-color: #9c27b0; }   /* Purple */
+    .sem6 { background-color: #f44336; }   /* Red */
+    .sem7 { background-color: #3f51b5; }   /* Indigo */
+    .sem8 { background-color: #00bcd4; }   /* Cyan */
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Navbar -->
+<nav class="bg-blue-600 text-white px-6 py-3 shadow-md">
+  <div class="container mx-auto flex justify-between items-center">
+    <span class="text-xl font-semibold">FacultyNotes IGDTUW</span>
+    <ul class="flex space-x-6">
+      <li><a href="index.html" class="hover:text-gray-200">Home</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="text-center mt-10">
+  <h1 class="text-4xl font-bold text-teal-600" id="department-name">Select Your Semester</h1>
+  <p class="text-lg text-gray-600 mt-2">Choose the semester for the selected department</p>
+</header>
+
+<!-- Year Section -->
+<main class="container mx-auto mt-16 px-6" id="semester-cards-container">
+  <!-- Semester links will be dynamically inserted here -->
+</main>
+
+<!-- Footer -->
+<footer class="bg-blue-600 text-white mt-16 py-4 text-center">
+  <p>&copy; 2024 FacultyNotes IGDTUW. All rights reserved.</p>
+</footer>
+
+<script>
+  // Get URL parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const department = urlParams.get('department');
+
+  // Display the department name
+  document.getElementById('department-name').innerText = `Select Semester for ${department.toUpperCase()}`;
+
+  // Define subjects per department and semester
+  const subjects = {
+    "cse-ai": {
+      "sem1": ["Math 101", "Computer Science 101", "Physics 101", "Engineering Drawing", "English 101"],
+      "sem2": ["Math 102", "Computer Science 102", "Data Structures", "Discrete Mathematics", "Electronics 102"],
+      "sem3": ["Algorithms", "Database Systems", "Linear Algebra", "Operating Systems", "Software Engineering"],
+      "sem4": ["Theory of Computation", "Software Engineering", "Computer Networks", "AI and ML", "Data Science"],
+      "sem5": ["Advanced Databases", "Artificial Intelligence", "Machine Learning", "Cloud Computing", "Digital Signal Processing"],
+      "sem6": ["Mobile App Development", "Cyber Security", "Web Technologies", "Network Security", "Big Data"],
+      "sem7": ["Blockchain", "Advanced Machine Learning", "Software Architecture", "Cloud Computing", "IoT"],
+      "sem8": ["Capstone Project", "AI Deployment", "Tech Entrepreneurship", "DevOps", "Distributed Systems"]
+    },
+    "cse": {
+      "sem1": ["Math 101", "Computer Science 101", "Physics 101", "Engineering Drawing", "English 101"],
+      "sem2": ["Math 102", "Computer Science 102", "Data Structures", "Discrete Mathematics", "Electronics 102"],
+      "sem3": ["Algorithms", "Database Systems", "Linear Algebra", "Operating Systems", "Software Engineering"],
+      "sem4": ["Software Engineering", "Computer Networks", "Digital Logic", "Compiler Design", "Operating System Concepts"],
+      "sem5": ["Computer Graphics", "Advanced Data Structures", "Database Management", "Machine Learning", "Advanced Algorithms"],
+      "sem6": ["Computer Vision", "Software Testing", "Artificial Intelligence", "Cloud Computing", "Web Technologies"],
+      "sem7": ["Blockchain", "Data Mining", "Cyber Security", "Software Project Management", "IoT"],
+      "sem8": ["Capstone Project", "Enterprise Applications", "Agile Development", "Mobile App Development", "Cloud Technologies"]
+    },
+    // Add similar mappings for other departments like 'it', 'ece', etc.
+  };
+
+  // Function to generate semester links dynamically with different colors for each year
+  function generateSemesterLinks(department) {
+    const semesters = subjects[department];
+    let semesterCardsHTML = '';
+
+    for (const [semester, subjectList] of Object.entries(semesters)) {
+      let colorClass = '';
+      if (semester === 'sem1') colorClass = 'sem1';
+      if (semester === 'sem2') colorClass = 'sem2';
+      if (semester === 'sem3') colorClass = 'sem3';
+      if (semester === 'sem4') colorClass = 'sem4';
+      if (semester === 'sem5') colorClass = 'sem5';
+      if (semester === 'sem6') colorClass = 'sem6';
+      if (semester === 'sem7') colorClass = 'sem7';
+      if (semester === 'sem8') colorClass = 'sem8';
+
+      semesterCardsHTML += `
+        <div class="year-card ${colorClass} hover-move">
+          <h3 class="text-xl font-medium mb-4 text-black">Semester ${semester.replace('sem', '')}</h3>
+          <div class="semester-list">
+            ${subjectList.map(subject => `
+              <a href="subjects.html?department=${department}&semester=${semester}&subject=${subject}" class="btn-semester">
+                ${subject}
+              </a>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    document.getElementById('semester-cards-container').innerHTML = semesterCardsHTML;
+  }
+
+  // Call function to generate the semester links based on the department
+  if (department && subjects[department]) {
+    generateSemesterLinks(department);
+  } else {
+    document.getElementById('semester-cards-container').innerHTML = '<p>Invalid department selected!</p>';
+  }
+</script>
+
+</body>
+</html>
