@@ -6,31 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subject Details - FacultyNotes IGDTUW</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Custom hover effect for cards */
-    .hover-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .hover-button:hover {
-      background-color: #2563eb; /* Darker shade of blue */
-      transform: scale(1.05);
-      transition: all 0.3s ease;
-    }
-
-    /* Ensure button is right-aligned within the container */
-    .button-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .button-container .view-notes-btn {
-      margin-left: auto;
-    }
-  </style>
+  <link rel="stylesheet" href="sub_style.css">
 </head>
 
 <body class="bg-gray-100 text-gray-800">
@@ -73,40 +49,224 @@
 
     // Define faculty and their respective Drive links (can be updated later)
     const facultyDetails = {
-      "Math 101": [
-        {
-          name: "Dr. John Doe",
-          driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
-        },
-        {
-          name: "Prof. Alice Green",
-          driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
-        }
-      ],
-      "Computer Science 101": [
-        {
-          name: "Prof. Jane Smith",
-          driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
-        },
-        {
-          name: "Dr. John Harris",
-          driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
-        }
-      ],
-      "Physics 101": [
-        {
-          name: "Dr. Michael Johnson",
-          driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
-        }
-      ],
-      "Engineering Drawing": [
-        {
-          name: "Prof. Robert Brown",
-          driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
-        }
-      ],
-      // Add other subjects and their respective faculty details here...
-    };
+  "Probability and Statistics": [
+    {
+      name: "Dr. Emma White",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Environmental Sciences": [
+    {
+      name: "Prof. Sarah Brown",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Programming with Python": [
+    {
+      name: "Dr. Mark Lee",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "IT Workshop": [
+    {
+      name: "Prof. Lisa Green",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Communication Skills": [
+    {
+      name: "Dr. James Wilson",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Applied Mathematics": [
+    {
+      name: "Prof. John Smith",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Applied Physics": [
+    {
+      name: "Dr. Olivia Davis",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Introduction to Data Science": [
+    {
+      name: "Prof. Michael Johnson",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Soft Skills and Personality Development": [
+    {
+      name: "Dr. Rachel Taylor",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Data Structures": [
+    {
+      name: "Dr. Thomas Harris",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Discrete Structures": [
+    {
+      name: "Prof. David Clark",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Software Engineering": [
+    {
+      name: "Prof. Emily Lewis",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Material Science and Engineering": [
+    {
+      name: "Dr. Matthew Walker",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Numerical Methods": [
+    {
+      name: "Prof. Olivia Moore",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Computer Networks": [
+    {
+      name: "Dr. Jonathan Harris",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Operating Systems": [
+    {
+      name: "Prof. Rachel Allen",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Design and Analysis of Algorithms": [
+    {
+      name: "Prof. Charles Green",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Optimization Techniques and Decision Making": [
+    {
+      name: "Dr. Natalie Scott",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Disaster Management": [
+    {
+      name: "Prof. William Miller",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Machine Learning": [
+    {
+      name: "Dr. Emily Roberts",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Cyber Security": [
+    {
+      name: "Prof. Brian Cooper",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Deep Learning – I": [
+    {
+      name: "Dr. David White",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Theory of Computation": [
+    {
+      name: "Prof. Alice Taylor",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Professional Ethics and Human Values": [
+    {
+      name: "Dr. Samuel Clark",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Natural Language Processing": [
+    {
+      name: "Prof. Isabella King",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Deep Learning – II": [
+    {
+      name: "Dr. Daniel Harris",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Departmental Elective – I": [
+    {
+      name: "Prof. Gregory Allen",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Departmental Elective – II": [
+    {
+      name: "Dr. Sophia Clark",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Digital Image Processing": [
+    {
+      name: "Prof. Thomas Moore",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Management Elective": [
+    {
+      name: "Prof. Mary Jones",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Recent Trends in AI": [
+    {
+      name: "Dr. Isabella Wilson",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Big Data Analytics": [
+    {
+      name: "Prof. Ethan Davis",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Multimodal Data Analysis": [
+    {
+      name: "Dr. Noah Brown",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Creativity, Innovation and Entrepreneurship": [
+    {
+      name: "Prof. Laura Scott",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Departmental Elective – V": [
+    {
+      name: "Dr. Victoria Miller",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ],
+  "Departmental Elective – VI": [
+    {
+      name: "Prof. James Taylor",
+      driveLink: "https://drive.google.com/your-link-here" // Replace with actual link
+    }
+  ]
+};
+
 
     // Function to dynamically generate the faculty details for each subject
     function generateFacultyDetails(subject) {
