@@ -45,380 +45,89 @@
 
   // Define subjects per department and semester
   const subjects = {
-"cse-ai": {
-  "sem1": [
-    "Probability and Statistics",
-    "Environmental Sciences",
-    "Programming with Python",
-    "IT Workshop",
-    "Communication Skills",
-    "Applied Mathematics",
-    "Applied Physics"
-  ],
-  "sem2": [
-    "Introduction to Data Science",
-    "Soft Skills and Personality Development",
-    "Data Structures",
-    "Applied Mathematics",
-    "Applied Physics"
-  ],
-  "sem3": [
-    "Artificial Intelligence",
-    "Data Structures",
-    "Discrete Structures",
-    "Software Engineering",
-    "Material Science and Engineering",
-    "Numerical Methods"
-  ],
-  "sem4": [
-    "Computer Networks",
-    "Operating Systems",
-    "Design and Analysis of Algorithms",
-    "Optimization Techniques and Decision Making",
-    "Disaster Management"
-  ],
-  "sem5": [
-    "Machine Learning",
-    "Cyber Security",
-    "Deep Learning – I",
-    "Theory of Computation",
-    "Professional Ethics and Human Values"
-  ],
-  "sem6": [
-    "Natural Language Processing",
-    "Deep Learning – II",
-    "Departmental Elective – I",
-    "Departmental Elective – II",
-    "Digital Image Processing",
-    "Management Elective"
-  ],
-  "sem7": [
-    "Recent Trends in AI",
-    "Big Data Analytics",
-    "Multimodal Data Analysis"
-  ],
-  "sem8": [
-    "Creativity, Innovation and Entrepreneurship",
-    "Departmental Elective – V",
-    "Departmental Elective – VI"
-  ]
-},
-
-
-    // IT
-    "it": {
-      "sem1": [
-        "Applied Mathematics",
-        "Communication Skills (CS)",
-        "Applied Physics",
-        "Programming with Python (PP)",
-        "Web Application Development",
-        "IT Workshop (ITW)"
-      ],
-      "sem2": [
-        "Introduction to Data Science",
-        "Soft Skills and Personality Development",
-        "Data Structures",
-        "Applied Mathematics",
-        "Applied Physics"
-      ],
-      "sem3": [
-        "Database Management System (DBMS)",
-        "Data Structures (DS)",
-        "Discrete Structures (DM)",
-        "Software Engineering (SE)",
-        "Material Science and Engineering (MSE)",
-        "Numerical Method (NM)"
-      ],
-      "sem4": [
-        "Computer Networks",
-        "Operating Systems",
-        "Design and Analysis of Algorithms",
-        "Optimization Techniques and Decision Making",
-        "Disaster Management"
-      ],
-      "sem5": [
-        "Artificial Intelligence and Machine Learning (AI & ML)",
-        "Theory of Computation (TOC)",
-        "Modelling and Simulation (MS)",
-        "Data Communication and Computer Network (DCCN)",
-        "Professional Ethics and Human Values (PEHV)"
-      ],
-      "sem6": [
-        "Natural Language Processing",
-        "Deep Learning – II",
-        "Departmental Elective – I",
-        "Departmental Elective – II",
-        "Digital Image Processing",
-        "Management Elective"
-      ],
-      "sem7": [
-        "Mobile Computing (MC)",
-        "Cybersecurity and Forensics (CSF)",
-        "Software Testing (ST)",
-        "Distributed Systems (DS)",
-        "Soft Computing",
-        "Big Data Analytics (BD)",
-        "E-Commerce (E Com)"
-      ],
-      "sem8": [
-        "Creativity, Innovation and Entrepreneurship",
-        "Departmental Elective – V",
-        "Departmental Elective – VI"
-      ]
+    "cse-ai": {
+      "sem1": ["Probability and Statistics (PS)", "Environmental Sciences (EVS)", "Communication Skills (CS)", "Programming with Python (PP)", "IT Workshop (ITW)", "Basics of Electrical and Electronics Engineering (BEE)"],
+      "sem2": ["Probability and Statistics (PS)", "Environmental Sciences (EVS)", "Object Oriented Programming using JAVA (OOPJ)", "IT Workshop (ITW)", "Database Management Systems (DBMS)"],
+      "sem3": ["Discrete Structures (DM)", "Software Engineering (SE)", "Data Structures (DS)", "Material Science & Engg (MSE)", "Numerical Method (NM)", "Artificial Intelligence (AI)"],
+      "sem4": ["Computer Networks (CN)", "Operating Systems (OS)", "Design and Analysis of Algorithms (DAA)", "Optimization Techniques and Decision Making (OTDM)", "Disaster Management", "Optimization Techniques (OT)", "Operation Management (OM)"],
+      "sem5": ["Theory of Computation (TOC)", "Deep Learning (DL)", "Machine Learning (ML)", "Cyber Security (CS)", "Professional Ethics and Human Values (PEHV)"],
+      "sem6": ["Cloud Computing (CC)", "Deep Learning II", "Natural Language Processing (NLP)", "Marketing Management (MM)", "Financial Management (FM)", "Data Warehousing & Business Intelligence (DWBI)", "Digital Image Processing (DIP)", "Compiler Design (CD)"],
+      "sem7": ["Big Data Analytics (BDA)", "Recent Trends in AI (RAI)", "Computer Vision (CV)", "Multimodal Data Analysis (MDA)", "Conversational AI (CAI)"],
+      "sem8": ["Creativity, Innovation and Entrepreneurship (CIE)", "Social Media Analytics (SMA)", "AI in Healthcare (AIH)"]
     },
 
-    // ECE
-    "ece": {
-      "sem1": [
-        "Probability and Statistics (PS)",
-        "Environmental Sciences (EVS)",
-        "Signals and Systems (SS)",
-        "Communication Skills (CS)",
-        "Electronics Workshop (EW)",
-        "Programming Fundamentals"
-      ],
-      "sem2": [
-        "Introduction to Data Science",
-        "Soft Skills and Personality Development",
-        "Data Structures",
-        "Applied Mathematics",
-        "Applied Physics"
-      ],
-      "sem3": [
-        "Analog Electronics (AE)",
-        "Network Analysis & Synthesis (NAS)",
-        "Digital Electronics (DE)",
-        "Signals & Systems (SS)",
-        "Database Management System (DBMS)",
-      ],
-      "sem4": [
-        "Computer Networks",
-        "Operating Systems",
-        "Design and Analysis of Algorithms",
-        "Optimization Techniques and Decision Making",
-        "Disaster Management"
-      ],
-      "sem5": [
-        "Digital Communication Systems (DCS)",
-        "Control Systems (CS)",
-        "Artificial Intelligence (AI)",
-        "Data Communication & Computer Networks (DCCN)",
-        "Professional Ethics and Human Values (PEHV)",
-        "Modelling and Simulation (MS)"
-      ],
-      "sem6": [
-        "Natural Language Processing",
-        "Deep Learning – II",
-        "Departmental Elective – I",
-        "Departmental Elective – II",
-        "Digital Image Processing",
-        "Management Elective"
-      ],
-      "sem7": [
-        "Microwave Techniques (MT)",
-        "Cybersecurity and Forensics (CSF)",
-        "Big Data Analytics",
-        "Wireless and Mobile Communication (WMC)"
-      ],
-      "sem8": [
-        "Creativity, Innovation and Entrepreneurship",
-        "Departmental Elective – V",
-        "Departmental Elective – VI"
-      ]
+
+    "it": { 
+        "sem1": ["Applied Mathematics (AM)", "Applied Physics (AP)", "Communication Skills (CS)", "Programming with Python", "Web Application Development", "IT Workshop"],
+        "sem2": ["Applied Mathematics - II", "Applied Physics - II", "Environmental Sciences (EVS)", "Basic Electrical Engineering (BEE)", "Programming in C"],
+        "sem3": ["Discrete Structures (DM)", "Software Engineering (SE)", "Data Structures (DS)", "Database Management Systems (DBMS)", "Material Science & Engineering (MSE)", "Numerical Method (NM)"],
+        "sem4": ["Operating Systems (OS)", "Object-Oriented Programming (OOPS)", "Computer Organization and Architecture (COA)", "Design and Analysis of Algorithms (DAA)", "Optimization Techniques (OT)", "Operations Management (OM)", "Disaster Management (DM)"],
+        "sem5": ["Artificial Intelligence and Machine Learning (AI & ML)", "Data Communication and Computer Network (DCCN)", "Modeling and Simulation (MS)", "Professional Ethics and Human Values (PEHV)", "Theory of Computation (TOC)"],
+        "sem6": ["Wireless Networks (WN)", "Cloud Computing (CC)", "Data Mining and Machine Learning (DMML)", "Advanced Data Structure and Algorithm (ADSA)", "Compiler Design (CD)", "Computer Vision (CV)", "Financial Management (FM)"],
+        "sem7": ["Mobile Computing (MC)", "Software Testing (ST)", "Big Data Analytics (BD)", "Cybersecurity and Forensics (CSF)", "E-Commerce", "Soft Computing", "Distributed Systems (DS)"],
+        "sem8": ["Information and Network Security (INS)", "Natural Language Processing (NLP)", "Information Retrieval (IR)", "Cryptography"]
     },
 
-    // ECE-AI
-    "ece-ai": {
-      "sem1": [
-        "Probability and Statistics (PS)",
-        "Environmental Sciences (EVS)",
-        "Signals and Systems (SS)",
-        "Communication Skills (CS)",
-        "Electronics Workshop (EW)",
-        "Programming Fundamentals"
-      ],
-      "sem2": [
-        "Introduction to Data Science",
-        "Soft Skills and Personality Development",
-        "Data Structures",
-        "Applied Mathematics",
-        "Applied Physics"
-      ],
-      "sem3": [
-        "Communication Systems (CS)",
-        "Network Analysis & Synthesis (NAS)",
-        "Neural Network and Artificial Intelligence (NNAI)",
-        "Data Structures (DS)",
-        "Database Management System (DBMS)",
-      ],
-      "sem4": [
-        "Computer Networks",
-        "Operating Systems",
-        "Design and Analysis of Algorithms",
-        "Optimization Techniques and Decision Making",
-        "Disaster Management"
-      ],
-      "sem5": [
-        "Digital Signal Processing (DSP)",
-        "Control Systems (CS)",
-        "Machine Learning (ML)",
-        "Computer Networks (CN)",
-        "Professional Ethics and Human Values (PEHV)"
-      ],
-      "sem6": [
-        "Natural Language Processing",
-        "Deep Learning – II",
-        "Departmental Elective – I",
-        "Departmental Elective – II",
-        "Digital Image Processing",
-        "Management Elective"
-      ],
-      "sem7": [
-        "Software Project Management (SPM)",
-        "Computer Vision (CV)",
-        "Deep Learning (DL)",
-        "Wireless and Mobile Communication (WMC)",
-        "Multimodal Data Analysis (MDA)"
-      ],
-      "sem8": [
-        "Creativity, Innovation and Entrepreneurship",
-        "Departmental Elective – V",
-        "Departmental Elective – VI"
-      ]
+
+    "mae": {  
+        "sem1": ["Applied Mathematics (AM)", "Applied Physics (AP)", "Communication Skills (CS)", "Programming Fundamentals", "Elements of Mechanical Engineering and Workshop", "Basics of Electrical and Electronics Engineering"],
+        "sem2": ["Applied Mathematics – II", "Applied Physics – II", "Environmental Sciences (EVS)", "Programming in C", "Basic Electrical Engineering"],
+        "sem3": ["Production Technology (PT)", "Strength Of Materials (SOM)", "Thermal Engineering (TE)", "Numerical Techniques for Engineers (NTE)", "Machine Drawing Lab (MED)", "Database Management System (DBMS)"],
+        "sem4": ["Production Technology-II (PT)", "Theory of Machines (TOM)", "Engineering Materials (EMat)", "Thermal Engineering -II (TE)", "Object Oriented Programming (OOPS)", "Disaster Management (DM)"],
+        "sem5": ["Machine Design (MD)", "Fluid Mechanics and Hydraulic Machines (FM)", "Automobile Engineering (AE)", "Artificial Intelligence", "Professional Ethics and Human Values (PEHV)"],
+        "sem6": ["Heat Transfer (HT)", "Computer Aided Design (CAD)", "Production Management (PM)", "Quality Management & Six Sigma (QMS)", "Industrial Tribology (I.Tr.)", "Combustion, Emission & Pollution Control (CEPC)", "Advanced Machine Design (AMD)", "Marketing Management (MKM)", "Financial Management (FM)"],
+        "sem7": ["Finite Element Analysis (FEA)", "Mechatronics (MT)", "Hydraulic & Pneumatic Control (HPC)", "Internet of Things (IoT)", "Machine Learning for Mechanical Engineers (ML)"],
+        "sem8": ["Computer Aided Manufacturing (CAM)", "Robotics (RBT)", "Reliability & Maintenance (ReM)", "Sensors & Actuators (SA)"]
     },
 
-    // MAE
-    "mae": {
-      "sem1": [
-        "Elements of Mechanical Engineering and Workshop",
-        "Applied Physics",
-        "Applied Mathematics",
-        "Communication Skills (CS)",
-        "Programming Fundamentals",
-        "Basics of Electrical and Electronics Engineering (BEE)"
-      ],
-      "sem2": [
-        "Introduction to Data Science",
-        "Soft Skills and Personality Development",
-        "Data Structures",
-        "Applied Mathematics",
-        "Applied Physics"
-      ],
-      "sem3": [
-        "Production Technology (PT)",
-        "Numerical Techniques for Engineers (NTE)",
-        "Database Management System (DBMS)",
-        "Machine Drawing Lab (MED)",
-        "Thermal Engineering (TE)",
-        "Strength Of Materials (SOM)"
-      ],
-      "sem4": [
-        "Computer Networks",
-        "Operating Systems",
-        "Design and Analysis of Algorithms",
-        "Optimization Techniques and Decision Making",
-        "Disaster Management"
-      ],
-      "sem5": [
-        "Machine Design (MD)",
-        "Fluid Mechanics and Hydraulic Machines (FM)",
-        "Professional Ethics and Human Values (PEHV)",
-        "Artificial Intelligence (AI)",
-        "Automobile Engineering (AE)"
-      ],
-      "sem6": [
-        "Natural Language Processing",
-        "Deep Learning – II",
-        "Departmental Elective – I",
-        "Departmental Elective – II",
-        "Digital Image Processing",
-        "Management Elective"
-      ],
-      "sem7": [
-        "Finite Element Analysis (FEA)",
-        "Mechatronics (MT)",
-        "Internet of Things (IoT)",
-        "Hydraulic & Pneumatic Control (HPC)",
-        "Machine Learning for Mechanical Engineers (ML)"
-      ],
-      "sem8": [
-        "Creativity, Innovation and Entrepreneurship",
-        "Departmental Elective – V",
-        "Departmental Elective – VI"
-      ]
+
+    "ece": {  
+        "sem1": ["Probability and Statistics", "Environmental Sciences", "Signals and Systems", "Communication Skills", "Electronics Workshop", "Programming Fundamentals"],  
+        "sem2": ["Applied Mathematics - II", "Applied Physics - II", "Environmental Sciences (EVS)", "Communication Skills", "Engineering Mechanics", "Workshop Practice"],  
+        "sem3": ["Analog Electronics (AE)", "Network Analysis & Synthesis (NAS)", "Digital Electronics (DE)", "Signals & Systems (SS)", "Database Management System (DBMS)"],  
+        "sem4": ["Linear Integrated Circuits", "Digital System Design", "Electromagnetic Field Theory", "Communication Systems", "Object Oriented Programming (OOP)", "Disaster Management"],  
+        "sem5": ["Digital Communication Systems (DCS)", "Control Systems (CS)", "Data Communication & Computer Networks (DCCN)", "Artificial Intelligence (AI)", "Professional Ethics and Human Values (PEHV)", "Modelling and Simulation (MS)"],  
+        "sem6": ["Digital Signal Processing (DSP)", "Information Theory & Coding (ITC)", "VLSI Design", "Microprocessors & Microcontrollers (MPMC)", "Cloud Computing (CC)", "Marketing Management (MM)"],  
+        "sem7": ["Microwave Techniques (MT)", "Cyber Security and Forensics (CSF)", "Wireless and Mobile Communication (WMC)", "Big Data Analytics"],  
+        "sem8": ["Embedded Systems (ES)", "Information Retrieval (IR)", "Non Conventional Energy Resources (NCER)", "Wireless Sensor Network"]  
     },
 
-    // AI-ML
-    "ai-ml": {
-      "sem1": [
-        "Probability and Statistics (PS)",
-        "Environmental Sciences (EVS)",
-        "Communication Skills (CS)",
-        "Programming with Python (PP)",
-        "Web Application Development",
-        "IT Workshop (ITW)"
-      ],
-      "sem2": [
-        "Introduction to Data Science",
-        "Soft Skills and Personality Development",
-        "Data Structures",
-        "Applied Mathematics",
-        "Applied Physics"
-      ],
-      "sem3": [
-        "Discrete Structures (DM)",
-        "Software Engineering (SE)",
-        "Material Science & Engg (MSE)",
-        "Numerical Method (NM)",
-        "Database Management System (DBMS)",
-        "Artificial Intelligence (AI)"
-      ],
-      "sem4": [
-        "Computer Networks",
-        "Operating Systems",
-        "Design and Analysis of Algorithms",
-        "Optimization Techniques and Decision Making",
-        "Disaster Management"
-      ],
-      "sem5": [
-        "Optimization Techniques and Decision making (OTDM)",
-        "Theory of Computation(TOC)",
-        "Social Networking and Mining (SNM)",
-        "Cryptography and Network Security (CNS)",
-        "Professional Ethics and Human Values (PEHV)"
-      ],
-      "sem6": [
-        "Natural Language Processing",
-        "Deep Learning – II",
-        "Departmental Elective – I",
-        "Departmental Elective – II",
-        "Digital Image Processing",
-        "Management Elective"
-      ],
-      "sem7": [
-        "Finite Element Analysis (FEA)",
-        "Mechatronics (MT)",
-        "Internet of Things (IoT)",
-        "Hydraulic & Pneumatic Control (HPC)",
-        "Machine Learning for Mechanical Engineers (ML)"
-      ],
-      "sem8": [
-        "Creativity, Innovation and Entrepreneurship",
-        "Departmental Elective – V",
-        "Departmental Elective – VI"
-      ]
+
+    "ece-ai": {   
+        "sem1": ["Probability and Statistics (PS)", "Environmental Sciences (EVS)", "Signals and Systems (SNS)", "Communication Skills (CS)", "Electronics Workshop (EW)", "Programming Fundamentals (PF)"],  
+        "sem2": ["Digital Electronics (DE)", "Signals and Systems (SNS)", "Programming with Python (PP)", "IT Workshop (ITW)", "Probability and Statistics (PS)"],  
+        "sem3": ["Communication Systems (CS)", "Network Analysis and Synthesis (NAS)", "Neural Network and Artificial Intelligence (NNAI)", "Data Structures (DS)", "Database Management System (DBMS)"],  
+        "sem4": ["Linear Integrated Circuits (LIC)", "Electromagnetic Field Theory (EMFT)", "Digital Communication Systems (DCS)", "Optimization Techniques and Decision Making (OTDM)", "Object Oriented Programming (OOP)", "Disaster Management (DM)"],  
+        "sem5": ["Control Systems (CS)", "Digital Signal Processing (DSP)", "Machine Learning (ML)", "Computer Networks (CN)", "Professional Ethics and Human Values (PEHV)"],  
+        "sem6": ["VLSI Design", "Microprocessors & Microcontrollers (MPMC)", "Digital Image Processing (DIP)", "Cloud Computing (CC)", "Semantic Web (SW)", "Marketing Management (MM)"],  
+        "sem7": ["Software Project Management (SPM)", "Wireless and Mobile Communication (WMC)", "Deep Learning (DL)", "Computer Vision (CV)", "Multimodal Data Analysis (MDA)"],  
+        "sem8": ["(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)"]  
     },
-    "cse": {
-      "sem1": ["Applied Mathematics", "Applied Physics", "Programming with C", "Communication Skills (CS)", "Web Application Development","Basics of Electrical and Electronics Engineering (BEE)"],
-      "sem2": ["Math 102", "Computer Science 102", "Data Structures", "Discrete Mathematics", "Electronics 102"],
-      "sem3": ["Numerical Method (NM)", "Data Structures (DS)", "Discrete Structures (DM)", "Software Engineering (SE)", "Material Science and Engineering (MSE)", "Artificial Intelligence (AI)"],
-      "sem4": ["Software Engineering", "Computer Networks", "Digital Logic", "Compiler Design", "Operating System Concepts"],
-      "sem5": ["Theory of Computation (TOC)", "Data Communication and Computer Network (DCCN)", "Artificial Intelligence (AI)", "Professional Ethics and Human Values (PEHV)", "Modelling and Simulation (MS)"],
-      "sem6": ["Computer Vision", "Software Testing", "Artificial Intelligence", "Cloud Computing", "Web Technologies"],
-      "sem7": ["Mobile Computing (MC)", "Evolutionary Computing (EC)", "Machine Learning (ML)", "E-Commerce (E Com)", "Knowledge Engineering (KE)"],
-      "sem8": ["Capstone Project", "Enterprise Applications", "Agile Development", "Mobile App Development", "Cloud Technologies"]
+
+
+    "ai-ml": {    
+        "sem1": ["Probability and Statistics (PS)", "Environmental Sciences (EVS)", "Signals and Systems (SNS)", "Communication Skills (CS)", "Electronics Workshop (EW)", "Programming Fundamentals (PF)"],  
+        "sem2": ["Object Oriented Programming using Java (OOPS)", "Fundamentals of Data Structure", "Introduction to Data Science", "Environmental Science (EVS)", "Probability and Statistics (PS)", "IT Workshop (ITW)"],  
+        "sem3": ["Discrete Structures (DM)", "Software Engineering (SE)", "Material Science and Engineering (MSE)", "Numerical Methods (NM)", "Database Management System (DBMS)", "Artificial Intelligence (AI)"],  
+        "sem4": ["Computer Networks (CN)", "Operating System (OS)", "Design and Analysis of Algorithms (DAA)", "Machine Learning (ML)", "Optimization Techniques (OT)", "Operations Management (OM)", "Disaster Management (DM)"],  
+        "sem5": ["Optimization Techniques and Decision Making (OTDM)", "Cryptography and Network Security (CNS)", "Social Networking and Mining (SNM)", "Theory of Computation (TOC)", "Professional Ethics and Human Values (PEHV)"],  
+        "sem6": ["(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)"],  
+        "sem7": ["(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)"],  
+        "sem8": ["(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)"]  
     },
+
+
+    "dmam": {     
+        "sem1": ["Probability and Statistics (PS)", "Environmental Sciences (EVS)", "Signals and Systems (SNS)", "Communication Skills (CS)", "Electronics Workshop (EW)", "Programming Fundamentals (PF)"],  
+        "sem2": ["Object Oriented Programming using Java (OOPS)", "Fundamentals of Data Structure (FDS)", "Introduction to Data Science (IDS)", "Environmental Science (EVS)", "Probability and Statistics (PS)", "IT Workshop (ITW)"],  
+        "sem3": ["(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)"],  
+        "sem4": ["(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)"],  
+        "sem5": ["(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)"],  
+        "sem6": ["(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)"],  
+        "sem7": ["(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)"],  
+        "sem8": ["(To be updated)", "(To be updated)", "(To be updated)", "(To be updated)"]  
+    }
+
     // Add similar mappings for other departments like 'it', 'ece', etc.
   };
 
